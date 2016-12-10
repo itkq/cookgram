@@ -1,0 +1,15 @@
+development: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: password
+
+development:
+  <<: *default
+  host: db
+  database: cookgram_development
+
+test:
+  <<: *default
+  database: cookgram_test
