@@ -1,0 +1,20 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version:
+      2.3.3
+  environment:
+    RACK_ENV: test
+  services:
+    - mysql
+dependencies:
+  override:
+    - bundle install
+database:
+  override:
+    - mv config/database.yml.ci config/database.yml
+    - bundle exec rake db:create
+test:
+  post:
+    - bundle exec rake test
