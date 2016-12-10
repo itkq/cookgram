@@ -1,12 +1,22 @@
 version: '2'
 services:
+  proxy:
+    image: jwilder/nginx-proxy:latest
+    ports:
+      - "80:80"
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock"
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.development
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/myapp
     ports:
       - "3000:3000"
+    environment:
+      VIRTUAL_HOST: dev.cookgram
     links:
       - db
   db:
