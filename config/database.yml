@@ -12,4 +12,5 @@ development:
 
 test:
   <<: *default
+  host: db
   database: cookgram_test
