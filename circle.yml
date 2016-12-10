@@ -14,7 +14,7 @@ dependencies:
 database:
   override:
     - mv config/database.yml.ci config/database.yml
-    - bundle exec rake db:create
+    - bundle exec rake db:create db:migrate
 test:
   post:
-    - bundle exec rake test
+    - bundle exec rake spec
