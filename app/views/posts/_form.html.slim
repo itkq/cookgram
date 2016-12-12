@@ -8,12 +8,11 @@
         - post.errors.full_messages.each do |message|
           li
             = message
-  .field
-    = f.label :body
-    = f.text_area :body
-  .field
+  fieldset.form-group
     = f.label :picture
-    br
-    = f.file_field :picture
-  .actions
-    = f.submit
+    = f.file_field :picture, class: "form-control"
+  fieldset.form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control"
+
+  = f.submit "Create", class: "btn btn-primary"
