@@ -62,3 +62,4 @@ end
 gem 'devise'
 gem 'paperclip'
 gem 'slim-rails'
+gem 'bootstrap', '~> 4.0.0.alpha5'
