@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title
+      | Cookgram
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    div.container
+      div.header.clearfix
+        nav
+          ul.nav.nav-pills.float-xs-right
+            - if user_signed_in?
+              li.nav-item
+                = link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn"
+            - else
+                = link_to "Login", new_user_session_path, class: "btn"
+
+        h3.text-muted
+          | Cookgram
+
+    div.container
+      == flash_messages
+      == yield
+
