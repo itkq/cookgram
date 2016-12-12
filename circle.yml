@@ -27,4 +27,4 @@ deployment:
   staging:
     branch: master
     commands:
-      ecs-cli compose service up
+      - ecs-cli compose service up
