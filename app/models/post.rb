@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  acts_as_ordered_taggable_on :tags
+
   has_attached_file :picture, styles: { original: "1000x1000>", thumb: "300x300>" }
 
   validates_attachment :picture, presence: true,

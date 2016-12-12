@@ -21,6 +21,11 @@
     <%= f.file_field :picture %>
   </div>
 
+  <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= text_field_tag 'post[tag_list]', @post.tag_list.join(',') %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
