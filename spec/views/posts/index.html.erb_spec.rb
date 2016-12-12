@@ -10,6 +10,6 @@ RSpec.describe "posts/index", type: :view do
 
   it "renders a list of posts" do
     render
-    assert_select "tbody>tr", :count => 2
+    assert_select "div.photo", :count => 2
   end
 end
