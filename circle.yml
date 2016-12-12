@@ -19,7 +19,7 @@ test:
   override:
     - bundle exec rake spec
   post:
-    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASS
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASS
     - docker build -t itkq/rails5:$CIRCLE_SHA1 .
     - docker push itkq/rails5:$CIRCLE_SHA1
 
