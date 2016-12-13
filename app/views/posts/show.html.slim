@@ -1,9 +1,7 @@
-p
-  strong
-    | Body:
-  = @post.body
-p
-  = image_tag @post.picture.url(:thumb)
-= link_to 'Edit', edit_post_path(@post)
-|  |
-= link_to 'Back', posts_path
+p = image_tag @post.picture.url, width: "100%"
+p = @post.body
+
+hr
+= link_to '<< Back', posts_path, class: "btn btn-secondary btn-sm"
+|　
+= link_to 'Edit', edit_post_path(@post), class: "btn btn-secondary btn-sm"
