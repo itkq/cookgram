@@ -1,6 +1,6 @@
 div.row
   - @posts.each do |post|
-    div.photo.col-sm-6.col-md-4
+    div.photo.col-sm-6
       = link_to post
         = image_tag post.picture.url(:thumb)
-      = post.body
+      p = post.body
