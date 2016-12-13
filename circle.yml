@@ -10,8 +10,11 @@ machine:
     - mysql
     - docker
 dependencies:
-  override:
+  pre:
     - bundle install
+    - pip install awscli
+    - apt-get install jq
+
 database:
   override:
     - mv config/database.yml.ci config/database.yml
@@ -23,3 +26,8 @@ test:
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASS
     - docker build -t itkq/rails5:$CIRCLE_SHA1 .
     - docker push itkq/rails5:$CIRCLE_SHA1
+deployment:
+  staging:
+    branch: master
+    commands:
+      - ./deploy.sh

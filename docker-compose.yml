@@ -1,6 +1,5 @@
 web:
-  image: itkq/rails5
-  mem_limit: 268435456
+  image: itkq/rails5:${CIRCLE_SHA1}
   command: ./docker-entrypoint
   ports:
     - "3000:3000"
@@ -8,6 +7,5 @@ web:
     - db
 db:
   image: mysql
-  mem_limit: 268435456
   environment:
     MYSQL_ROOT_PASSWORD: password
