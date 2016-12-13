@@ -13,7 +13,7 @@ dependencies:
   pre:
     - bundle install
     - pip install awscli
-    - apt-get install jq
+    - sudo apt-get install -y jq
 
 database:
   override:
