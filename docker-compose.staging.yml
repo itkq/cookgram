@@ -13,9 +13,7 @@ web:
   links:
     - db
 nginx:
-  image: beevelop/nginx-basic-auth
-  environment:
-    FORWARD_PORT: "3000"
+  image: itkq/rails5-nginx
   ports:
     - "80:80"
   links:
