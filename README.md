@@ -25,15 +25,20 @@ Githubと連携させ，masterブランチにプッシュされるとRSpecでユ
 同時に，webのdockerイメージもビルドされる（環境変数$CIRCLE_SHA1により，hub.docker.com
 でバージョン管理している）．
 
-また，CirCleCIとAWS ECSを連携させ，ステージング環境の継続的デリバリを設定した．
-テスト通過後，ecs-cliからECSにcomposeデプロイする．
-ECSの機能により，ホットデプロイが可能である．
-ステージング環境では，別途Nginxコンテナを設定し，Basic認証を付加している．
+また，CirCleCIとHerokuを連携させ，ステージング環境の継続的デリバリを設定した．
+テスト通過後，コンテナをデプロイする．
+ステージング環境では，設定によりBasic認証を付加している．
 
-Basic Auth:  
-url:
+Basic Auth: cookgram / ppap  
+url: [ https://cookgram.herokuapp.com/ ](https://cookgram.herokuapp.com/)
 
-コンテナデプロイすることにより，将来的にはオートスケールの対応が可能である．
+また，以下のコマンドによってECSへのデプロイも可能である．
+```sh
+$ ecs-cli configure --region ap-northeast-1 --cluster Cookgram
+$ ecs-cli up --keypair aws --capability-iam --size 1 --instance-type t2.small
+$ ecs-cli compose -f docker-compose.staging.yml up
+```
+
 
 ## 設計
 
