@@ -7,7 +7,7 @@ p
 hr
 = link_to '<< Back', posts_path, class: "btn btn-secondary btn-sm"
 |　
-= link_to 'Edit', edit_post_path(@post), class: "btn btn-secondary btn-sm"
-|　
 - if correct_author
+  = link_to 'Edit', edit_post_path(@post), class: "btn btn-secondary btn-sm"
+  |　
   = link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"

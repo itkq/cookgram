@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: :index
-  before_action :correct_author, only: [:show, :edit, :update, :destroy]
+  before_action :correct_author, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
