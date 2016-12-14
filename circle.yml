@@ -31,6 +31,8 @@ deployment:
     branch: master
     commands:
       - heroku plugins:install heroku-container-registry
-      - heroku container:login
+      - heroku maintenance:on --app cookgram
+      - heroku container:login -v
       - heroku container:push web --app cookgram
+      - heorku maintenance:off --app cookgram
 
