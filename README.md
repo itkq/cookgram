@@ -17,7 +17,7 @@ $ cd cookgram
 $ docker-compose -f docker-compose.development.yml up --build
 ```
 
-だけで開発環境を構築できる．url: [http://dev.cookgram/](http://dev.cookgram/)
+だけで開発環境を構築できる．URL: [http://dev.cookgram/](http://dev.cookgram/)
 
 ### Continuous Integration / Continuous Delivery
 ソフトウェアの品質を保証するために，CicleCIによる継続的インテグレーションを設定した．
@@ -30,7 +30,8 @@ Githubと連携させ，masterブランチにプッシュされるとRSpecでユ
 ステージング環境では，設定によりBasic認証を付加している．
 
 Basic Auth: cookgram / ppap  
-url: [ https://cookgram.herokuapp.com/ ](https://cookgram.herokuapp.com/)
+URL: [ https://cookgram.herokuapp.com/ ](https://cookgram.herokuapp.com/)  
+Test user: aaa@cookgram.com / aaaaaa
 
 また，以下のコマンドによってECSへのデプロイも可能である．
 ```sh
