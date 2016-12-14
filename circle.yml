@@ -22,10 +22,10 @@ database:
 test:
   override:
     - bundle exec rake spec
-  post:
-    - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASS
-    - docker build --rm=false -f ./Dockerfile.staging -t itkq/rails5:$CIRCLE_SHA1 .
-    - docker push itkq/rails5:$CIRCLE_SHA1
+  # post:
+  #   - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASS
+  #   - docker build --rm=false -f ./Dockerfile.staging -t itkq/rails5:$CIRCLE_SHA1 .
+  #   - docker push itkq/rails5:$CIRCLE_SHA1
 deployment:
   staging:
     branch: master
