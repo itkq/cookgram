@@ -60,6 +60,7 @@ RSpec.configure do |config|
 
   # for Devise
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.extend ControllerMacros, type: :controller
 
   # paperclip
