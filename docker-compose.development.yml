@@ -17,6 +17,7 @@ services:
       - "3000:3000"
     environment:
       VIRTUAL_HOST: dev.cookgram
+      PORT: "3000"
     links:
       - db
   db:

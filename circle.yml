@@ -30,4 +30,4 @@ deployment:
   staging:
     branch: master
     commands:
-      - ./deploy.sh
+      - heroku container:push web
