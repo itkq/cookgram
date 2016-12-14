@@ -7,4 +7,4 @@ if [ $? -ne 0 ] ; then
 fi
 
 ecs-cli configure --cluster Cookgram
-ecs-cli compose up
+ecs-cli compose -f docker-compose.staging.yml up
