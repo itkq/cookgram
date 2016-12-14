@@ -7,3 +7,5 @@ ADD Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install --without development test --jobs 4 --retry 5
 ADD . /myapp
 EXPOSE 3000
+
+CMD ["./docker-entrypoint"]

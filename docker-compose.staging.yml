@@ -1,0 +1,28 @@
+web:
+  image: itkq/rails5:${CIRCLE_SHA1}
+  command: ./docker-entrypoint
+  environment:
+    RAILS_ENV: staging
+    SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+    STAG_DB_HOST: ${STAG_DB_HOST}
+    STAG_DB_USERNAME: ${STAG_DB_USERNAME}
+    STAG_DB_PASSWORD: ${STAG_DB_PASSWORD}
+    STAG_DB_NAME: ${STAG_DB_NAME}
+  ports:
+    - "3000:3000"
+  links:
+    - db
+nginx:
+  image: beevelop/nginx-basic-auth
+  environment:
+    FORWARD_PORT: "3000"
+  ports:
+    - "80:80"
+  volumes_from:
+    - web
+  links:
+    - web
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: ${STAG_DB_PASSWORD}
