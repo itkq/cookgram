@@ -30,7 +30,7 @@ deployment:
   staging:
     branch: master
     commands:
-      - heroku plugins:install heroku-container-registry
+      - heroku plugins:install heroku-container-tools
       - heroku maintenance:on --app cookgram
       - heroku container:login -v
       - heroku container:push web --app cookgram
