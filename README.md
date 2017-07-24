@@ -52,3 +52,6 @@ $ ecs-cli compose -f docker-compose.staging.yml up
   最も触っている DB を選択．
 - リバースプロキシ: nginx  
   最も触っている Web サーバを選択．
+
+## スクリーンショット
+![](https://raw.githubusercontent.com/itkq/cookgram/master/img/screenshot.png)
